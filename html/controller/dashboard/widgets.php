@@ -15,13 +15,13 @@ $db->scalar_widgets = $db->query( $sql );
 // If there are active BINARY events, show the block
 if ($db->binary_widgets != NULL) {
 	
-	include ("/var/www/html/www.health-dev.com/public_html/view/dashboard/widgets/binary.php");
+	include ("/var/www/html/www.trackr-dev.com/public_html/view/dashboard/widgets/binary.php");
 
 }
 
 // If there are qualifying SCALAR widgets, show the block below
 if ($db->scalar_widgets != NULL) {
 	
-	include ("/var/www/html/www.health-dev.com/public_html/view/dashboard/widgets/scalar.php");
+	include ("/var/www/html/www.trackr-dev.com/public_html/view/dashboard/widgets/scalar.php");
 
 }
