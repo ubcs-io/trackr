@@ -16,6 +16,10 @@ This repository contains the setup files in the DEV directory.  In this folder y
 
 Please note that the DEV environment code is distributed under a different license.  If you would like to re-use the code from that project, get in touch with them first.
 
+#### How Does it Work?
+
+When you activate the development environment using script/start, you are starting up a virtual machine locally, which can then be accessed through a brower.  This allows you to make changes to the files on your machine, and then view the changes live through a browser.  This happens by changing the hosts file on your local machine, so that when you visit trackr-dev.com, it points your browser to the virtual machine instead of an external server.
+
 ### Contributing
 
 If you see a change you'd like to make, go ahead and fork a copy of this repository and make a pull request.  If you're looking for ideas, check through the 'issues' section of the repo to see if there are any that you think you'd like to try your hand at.  If you're interested in an issue but would like help understanding the codebase, feel free to leave a comment on the issue.
