@@ -22,7 +22,7 @@ if (isset($_GET['view']) && $_GET['view'] == "true") {
 	// Show the details of the particular event
 	include ("../view/settings/edit_event.php");
 
-} elseif (isset($_GET['description']) && $_GET['origname'] == "Event Name") {
+} elseif (isset($_GET['description']) && $_GET['id'] == "") {
 
 	$event_manager->add_event ( $event_name, "binary", $_GET['description'] ) ;
 
@@ -30,34 +30,47 @@ if (isset($_GET['view']) && $_GET['view'] == "true") {
 	$event_manager->build_tables( );
 
 	// Redirect to the overview page without query strings
-    // header("Location: http://www.health-dev.com/analytics/settings.php");
-    // exit;
+    header("Location: http://www.trackr-dev.com/analytics/settings.php");
+    exit;
 
 } elseif (isset($_GET['description'])) {
 
+<<<<<<< HEAD
 	$event_manager->update_event ( $event_manager->id, "name", $event_name );
 	$event_manager->update_event ( $event_manager->id, "description", $_GET['description'] );
+=======
+	$event_manager->update_event ( $_GET['id'], "name", $event_name );
+	$event_manager->update_event ( $_GET['id'], "description", $_GET['description'] );
+>>>>>>> e1797dbe5d3983adcb7461b8c11902152573a733
 
 	// Redirect to the overview page without query strings
-    // header("Location: http://www.health-dev.com/analytics/settings.php");
-    // exit;
+    header("Location: http://www.trackr-dev.com/analytics/settings.php");
+    exit;
 
 } elseif (isset($_GET['edit']) && $_GET['edit'] == "true") {
 
 	// If there's a disable query, mark the event as not active
 	if ($_GET['fields'] == "status" && $_GET['value'] == "disabled") {
 
+<<<<<<< HEAD
 		$event_manager->update_event ( $event_manager->id, "active", 0 );
 
 	} elseif ($_GET['fields'] == "status" && $_GET['value'] == "enabled") {
 
 		$event_manager->update_event ( $event_manager->id, "active", 1 );
+=======
+		$event_manager->update_event ( $_GET['id'], "active", 0 );
+
+	} elseif ($_GET['fields'] == "status" && $_GET['value'] == "enabled") {
+
+		$event_manager->update_event ( $_GET['id'], "active", 1 );
+>>>>>>> e1797dbe5d3983adcb7461b8c11902152573a733
 
 	}
 	
 	// Redirect to the overview page without query strings
-    // header("Location: http://www.health-dev.com/analytics/settings.php");
-    // exit;
+    header("Location: http://www.trackr-dev.com/analytics/settings.php");
+    exit;
 
 }
 

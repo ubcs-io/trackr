@@ -97,10 +97,11 @@ class event_manager extends db {
 
       // Create a new table for each event
       $sql = "CREATE TABLE IF NOT EXISTS `" . $event['name'] . "` (
+       `id` int(11) NOT NULL AUTO_INCREMENT,
         `date` datetime NOT NULL,
         `value` int(11) NOT NULL,
         `active` int(11) NOT NULL,
-        UNIQUE KEY `date` (`date`)
+        UNIQUE KEY `id` (`id`)
       ) ENGINE=MyISAM DEFAULT CHARSET=latin1";
 
       $this->query( $sql );

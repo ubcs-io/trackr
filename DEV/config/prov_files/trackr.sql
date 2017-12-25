@@ -1,11 +1,3 @@
--- phpMyAdmin SQL Dump
--- version 4.0.10.18
--- https://www.phpmyadmin.net
---
--- Host: localhost:3306
--- Generation Time: Dec 09, 2017 at 01:00 PM
--- Server version: 10.1.24-MariaDB-cll-lve
--- PHP Version: 5.6.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,7 +9,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Database: `health_record`
+-- Database: `trackr_record`
 --
 
 -- --------------------------------------------------------
@@ -25,19 +17,31 @@ SET time_zone = "+00:00";
 --
 -- Table structure for table `tracked_events`
 --
+-- id - numeric - unique id for managing individual events
+-- date_added - datetime - the original date the event was added
+-- name - string - the name of the event
+-- category - string - the theme or category of an event like "medication" or "chores" 
+-- type - string - the style of event such as binary or scalar
+-- reset - int - the number of days in between an event
+--
+--
 
 CREATE TABLE IF NOT EXISTS `tracked_events` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `date_added` datetime NOT NULL,
   `name` varchar(255) NOT NULL,
-  `type` varchar(255) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `category` varchar(255) NOT NULL,
+  `type` varchar(255) NOT NULL, 
+  `reset` int(11) NOT NULL DEFAULT 1, 
   `description` varchar(255) NOT NULL,
   `image_url` varchar(255),
   `active` int(11) NOT NULL,
-  UNIQUE KEY `date_added` (`date_added`)
+  UNIQUE KEY `id` (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `dly`
+-- Insert sample data to the main table
 --
 
 INSERT INTO `tracked_events` (`date_added`, `name`, `type`, `description`, `image_url`, `active`) VALUES
@@ -52,24 +56,27 @@ INSERT INTO `tracked_events` (`date_added`, `name`, `type`, `description`, `imag
 --
 
 CREATE TABLE IF NOT EXISTS `Affect` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `date` datetime NOT NULL,
   `value` int(11) NOT NULL,
   `active` int(11) NOT NULL,
-  UNIQUE KEY `date` (`date`)
+  UNIQUE KEY `id` (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 CREATE TABLE IF NOT EXISTS `Activity` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `date` datetime NOT NULL,
   `value` int(11) NOT NULL,
   `active` int(11) NOT NULL,
-  UNIQUE KEY `date` (`date`)
+  UNIQUE KEY `id` (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 CREATE TABLE IF NOT EXISTS `Meditation` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `date` datetime NOT NULL,
   `value` int(11) NOT NULL,
   `active` int(11) NOT NULL,
-  UNIQUE KEY `date` (`date`)
+  UNIQUE KEY `id` (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 
