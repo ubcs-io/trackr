@@ -1,0 +1,40 @@
+#!/usr/bin/env bash
+
+source config/vm_config.sh
+
+echo "Configuring Vagrantfile"
+echo "# -*- mode: ruby -*-" > Vagrantfile
+echo "# vi: set ft=ruby :" >> Vagrantfile
+echo "Vagrant.configure(\"2\") do |config|" >> Vagrantfile
+echo "   config.vm.box = \"ubuntu/trusty64\"" >> Vagrantfile
+echo "   config.vm.provision :shell, path: \"config/prov_files/prov.sh\"" >> Vagrantfile
+echo "   config.vm.network :forwarded_port, guest: 80, host: 4567" >> Vagrantfile
+echo "   config.vm.network \"private_network\", ip: \"$static_ip\"" >> Vagrantfile
+echo "   config.vm.hostname = \"$hostname\"" >> Vagrantfile
+if [ ${host_folders[0]} ]
+then
+  for i in ${!host_folders[@]}
+  do
+    echo "   config.vm.synced_folder \"${host_folders[$i]}\", \"${guest_folders[$i]}\"" >> Vagrantfile
+  done
+fi
+echo "end" >> Vagrantfile
+
+echo "Configuring hosts file"
+
+grep -v "$static_ip" "$hosts_file" > hosts
+
+for item in ${domains[*]}
+do
+  echo "$static_ip   $item" >> hosts
+done
+
+sudo cp hosts "$hosts_file"
+
+vagrant up --provider virtualbox
+
+echo "Hosts Set:"
+sudo grep "$static_ip" "$hosts_file"
+echo "Cleaning Up On Host..."
+rm hosts
+echo "Startup Completed."

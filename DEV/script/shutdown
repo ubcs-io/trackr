@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+
+source config/vm_config.sh
+
+Vagrant destroy
+
+grep "$static_ip" "$hosts_file" && host="found" || echo "No host record found."
+
+if [[ "$host" =~ "found" ]]; then
+  read -p "Would you like to remove these host records (y/n)?" removalResopnce
+  echo
+  if [[ "$removalResopnce" =~ ^[Yy]$ ]]
+  then
+    echo "Removing hosts..."
+    sudo grep -v "$static_ip" "$hosts_file" > hosts
+    sudo cp hosts "$hosts_file"
+    rm hosts
+  else
+    echo "Hosts will remain"
+  fi
+fi
+
+echo "Cleaning Logs"
+sudo rm -rf config/prov_files/logs/
+
+echo "Shutdown complete."
