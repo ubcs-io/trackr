@@ -73,7 +73,8 @@ class event_manager extends db {
   public function event_status (  ) {
 
     // Create a new event in the tracked_events table
-    $sql = "UPDATE tracked_events SET `" . $field_to_update . "` = '" . $value . "' WHERE id = '" . $current_name . "'";
+    $sql = "SELECT * FROM " . $this->name . " 
+    WHERE date > DATE_SUB(CURDATE(), INTERVAL 1 DAY)";
 
     $this->query( $sql );
 

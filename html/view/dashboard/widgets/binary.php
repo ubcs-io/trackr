@@ -16,7 +16,7 @@
 		foreach ($db->binary_widgets as $widget) { 
 
 			// var_dump($widget);
-			// $widgets = new widget( $widget['id'] );
+			// $widgets = new event_manager( $widget['id'] );
 			// var_dump($widgets);
 
 			?>
