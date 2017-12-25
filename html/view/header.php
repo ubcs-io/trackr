@@ -38,7 +38,7 @@
 
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
-              <li><a href="http://www.health-dev.com/analytics/log.php">Log</a></li>
+              <li><a href="http://www.trackr-dev.com/analytics/log.php">Log</a></li>
             </ul>
 
             <ul class="nav navbar-nav navbar-right">

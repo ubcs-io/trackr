@@ -16,7 +16,7 @@
 		foreach ($db->binary_widgets as $widget) { ?>
 
 		    <div class="col-xs-6 col-sm-3 placeholder">
-		      <img src="http://www.health-dev.com/view/media<?php echo $background?>" width="200" height="200" class="img-responsive">
+		      <img src="http://www.trackr-dev.com/view/media<?php echo $background?>" width="200" height="200" class="img-responsive">
 		      <h4><?php echo $widget['name']; ?></h4>
 		      <span class="text-muted"><?php echo $widget['description']; ?></span>
 		    </div>

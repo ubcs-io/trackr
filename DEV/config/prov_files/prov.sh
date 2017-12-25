@@ -40,10 +40,10 @@ sudo apt-get -qq install -y mysql-server &> /vagrant/config/prov_files/logs/star
 
 # Create the database and load the backup files for dev
 echo "Creating Database"
-echo "CREATE DATABASE health_record" | sudo mysql -u root -p"$mysql_password"
+echo "CREATE DATABASE trackr_record" | sudo mysql -u root -p"$mysql_password"
 
 echo "Backfilling data"
-sudo mysql -u root -p"$mysql_password" health_record < /vagrant/config/prov_files/health.sql
+sudo mysql -u root -p"$mysql_password" trackr_record < /vagrant/config/prov_files/trackr.sql
 
 
 echo "Installing PHP7"

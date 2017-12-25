@@ -2,8 +2,6 @@
 
 include ("../model/db/operations.php");
 
-include ("../functions.php");
-
 include ("../controller/authorization.php");
 
 include ("../controller/header.php");

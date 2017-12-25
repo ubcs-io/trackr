@@ -28,7 +28,7 @@ if (isset($_GET['log']) && $_GET['log'] == "true") {
 
 
 	// Redirect to the overview page without query strings
-    header("Location: http://www.health-dev.com/");
+    header("Location: http://www.trackr-dev.com/");
     exit;
 
 }
