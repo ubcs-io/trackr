@@ -34,7 +34,7 @@ class event_manager extends db {
   public function update_event ( $current_name, $field_to_update, $value ) {
 
     // Create a new event in the tracked_events table
-    $sql = "UPDATE tracked_events SET `" . $field_to_update . "` = '" . $value . "' WHERE name = '" . $current_name . "'";
+    $sql = "UPDATE tracked_events SET `" . $field_to_update . "` = '" . $value . "' WHERE id = '" . $current_name . "'";
 
     $this->query( $sql );
 
