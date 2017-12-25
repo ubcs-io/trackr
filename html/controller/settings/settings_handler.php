@@ -3,6 +3,13 @@
 // This section detects query strings and does the logging
 $event_manager = new event_manager($con);
 
+
+if (isset($_GET['id'])) {
+
+	$event_manager->set_event_details($_GET['id']);
+
+}
+
 if (isset($_GET['event'])) {
 	
 	$event_name = $_GET['event'];
@@ -20,7 +27,7 @@ if (isset($_GET['view']) && $_GET['view'] == "true") {
 	$event_manager->add_event ( $event_name, "binary", $_GET['description'] ) ;
 
 	// Now that a new event has been created, update the tables
-	$event_manager->build_tables();
+	$event_manager->build_tables( );
 
 	// Redirect to the overview page without query strings
     // header("Location: http://www.health-dev.com/analytics/settings.php");
@@ -28,11 +35,8 @@ if (isset($_GET['view']) && $_GET['view'] == "true") {
 
 } elseif (isset($_GET['description'])) {
 
-	$event_manager->update_event ( $_GET['origname'], "name", $event_name );
-	$event_manager->update_event ( $_GET['origname'], "description", $_GET['description'] );
-
-	// $event_manager->update_event ( $_GET['origname'], "name", $event_name );
-	// $event_manager->update_event ( $_GET['origname'], "description", $_GET['description'] );
+	$event_manager->update_event ( $event_manager->id, "name", $event_name );
+	$event_manager->update_event ( $event_manager->id, "description", $_GET['description'] );
 
 	// Redirect to the overview page without query strings
     // header("Location: http://www.health-dev.com/analytics/settings.php");
@@ -43,11 +47,11 @@ if (isset($_GET['view']) && $_GET['view'] == "true") {
 	// If there's a disable query, mark the event as not active
 	if ($_GET['fields'] == "status" && $_GET['value'] == "disabled") {
 
-		$event_manager->update_event ( $event_name, "active", 0 );
+		$event_manager->update_event ( $event_manager->id, "active", 0 );
 
 	} elseif ($_GET['fields'] == "status" && $_GET['value'] == "enabled") {
 
-		$event_manager->update_event ( $event_name, "active", 1 );
+		$event_manager->update_event ( $event_manager->id, "active", 1 );
 
 	}
 	
