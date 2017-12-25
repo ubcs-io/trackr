@@ -61,7 +61,7 @@ class event_manager extends db {
         `date` datetime NOT NULL,
         `value` int(11) NOT NULL,
         `active` int(11) NOT NULL,
-        UNIQUE KEY `date` (`date`)
+        UNIQUE KEY `id` (`id`)
       ) ENGINE=MyISAM DEFAULT CHARSET=latin1";
 
       $this->query( $sql );
