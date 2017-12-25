@@ -37,8 +37,6 @@ if (isset($_GET['view']) && $_GET['view'] == "true") {
 
 } elseif (isset($_GET['edit']) && $_GET['edit'] == "true") {
 
-	var_dump($_GET);
-
 	// If there's a disable query, mark the event as not active
 	if ($_GET['fields'] == "status" && $_GET['value'] == "disabled") {
 
