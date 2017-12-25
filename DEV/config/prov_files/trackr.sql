@@ -27,13 +27,14 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE IF NOT EXISTS `tracked_events` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `date_added` datetime NOT NULL,
   `name` varchar(255) NOT NULL,
   `type` varchar(255) NOT NULL,
   `description` varchar(255) NOT NULL,
   `image_url` varchar(255),
   `active` int(11) NOT NULL,
-  UNIQUE KEY `date_added` (`date_added`)
+  UNIQUE KEY `id` (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
@@ -52,24 +53,27 @@ INSERT INTO `tracked_events` (`date_added`, `name`, `type`, `description`, `imag
 --
 
 CREATE TABLE IF NOT EXISTS `Affect` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `date` datetime NOT NULL,
   `value` int(11) NOT NULL,
   `active` int(11) NOT NULL,
-  UNIQUE KEY `date` (`date`)
+  UNIQUE KEY `id` (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 CREATE TABLE IF NOT EXISTS `Activity` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `date` datetime NOT NULL,
   `value` int(11) NOT NULL,
   `active` int(11) NOT NULL,
-  UNIQUE KEY `date` (`date`)
+  UNIQUE KEY `id` (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 CREATE TABLE IF NOT EXISTS `Meditation` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `date` datetime NOT NULL,
   `value` int(11) NOT NULL,
   `active` int(11) NOT NULL,
-  UNIQUE KEY `date` (`date`)
+  UNIQUE KEY `id` (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 
