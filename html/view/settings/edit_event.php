@@ -19,7 +19,7 @@ $instruction = ($name == "Event Name") ? "Create Event" : "Update";
   <form method="GET">
 
 
-    <input type="hidden" name="origname" id="name" value="<?php echo $name ?>">
+    <input type="hidden" name="id" id="name" value="<?php echo $db->event_details[0]['id'] ?>">
 
     <div class="form-group">
       <label for="new_name">Event Name</label>
@@ -42,13 +42,13 @@ $instruction = ($name == "Event Name") ? "Create Event" : "Update";
       // Check whether to show the disable or enable button
       if ($db->event_details[0]['active'] === "1") { ?>
 
-        <a href="?edit=true&fields=status&value=disabled&event=<?php echo $db->event_details[0]['name']; ?>" class="btn btn-danger" role="button">
+        <a href="?edit=true&fields=status&value=disabled&id=<?php echo $db->event_details[0]['id']; ?>" class="btn btn-danger" role="button">
           <span class="glyphicon glyphicon-pause" aria-hidden="true"></span>&nbsp;&nbsp; Disable
         </a> 
 
       <?php } elseif ($db->event_details[0]['active'] === "0") { ?>
     
-        <a href="?edit=true&fields=status&value=enabled&event=<?php echo $db->event_details[0]['name']; ?>" class="btn btn-success" role="button">
+        <a href="?edit=true&fields=status&value=enabled&id=<?php echo $db->event_details[0]['id']; ?>" class="btn btn-success" role="button">
           <span class="glyphicon glyphicon-play" aria-hidden="true"></span>&nbsp;&nbsp; Enable
         </a> 
     
