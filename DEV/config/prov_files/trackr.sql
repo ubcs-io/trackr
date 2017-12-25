@@ -17,12 +17,23 @@ SET time_zone = "+00:00";
 --
 -- Table structure for table `tracked_events`
 --
+-- id - numeric - unique id for managing individual events
+-- date_added - datetime - the original date the event was added
+-- name - string - the name of the event
+-- category - string - the theme or category of an event like "medication" or "chores" 
+-- type - string - the style of event such as binary or scalar
+-- reset - int - the number of days in between an event
+--
+--
 
 CREATE TABLE IF NOT EXISTS `tracked_events` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `date_added` datetime NOT NULL,
   `name` varchar(255) NOT NULL,
-  `type` varchar(255) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `category` varchar(255) NOT NULL,
+  `type` varchar(255) NOT NULL, 
+  `reset` int(11) NOT NULL DEFAULT 1, 
   `description` varchar(255) NOT NULL,
   `image_url` varchar(255),
   `active` int(11) NOT NULL,
