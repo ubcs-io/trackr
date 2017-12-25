@@ -1,11 +1,3 @@
--- phpMyAdmin SQL Dump
--- version 4.0.10.18
--- https://www.phpmyadmin.net
---
--- Host: localhost:3306
--- Generation Time: Dec 09, 2017 at 01:00 PM
--- Server version: 10.1.24-MariaDB-cll-lve
--- PHP Version: 5.6.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,7 +9,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Database: `health_record`
+-- Database: `trackr_record`
 --
 
 -- --------------------------------------------------------
@@ -38,7 +30,7 @@ CREATE TABLE IF NOT EXISTS `tracked_events` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `dly`
+-- Insert sample data to the main table
 --
 
 INSERT INTO `tracked_events` (`date_added`, `name`, `type`, `description`, `image_url`, `active`) VALUES
