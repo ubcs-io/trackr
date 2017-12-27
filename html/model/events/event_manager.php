@@ -34,6 +34,8 @@ class event_manager extends db {
 
   public function add_event ( $event_name, $type, $description, $image_url = NULL ) {
 
+    $description = $this->con->real_escape_string($description);
+
     // Create a new event in the tracked_events table
     $sql = "INSERT INTO  tracked_events (`date_added`, `name`, `type`, `description`, `image_url`, `active`) 
     VALUES ( CURRENT_TIMESTAMP(), '" . $event_name . "', '" . $type . "', '" . $description . "', '" . $image_url . "', 1)";
