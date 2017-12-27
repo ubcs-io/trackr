@@ -22,9 +22,14 @@ When you activate the development environment using script/start, you are starti
 
 #### How Do I Start?
 
-Start by downloading VirtualBox and Vagrant, linked in the DEV folder of this repository.  If you've finished that and you're working on a Mac, the next step is to open a Terminal window.  Start by making a project directory with the command `mkdir ~/documents/projects`.  Then navigate to that directory by using `cd ~/documents/projects`.  Once you're in your new project directory, fetch the project from the git repo by using `git clone https://github.com/ubcs-io/trackr.git`
+Start by downloading VirtualBox and Vagrant, linked in the DEV folder of this repository.  If you've finished that and you're working on a Mac, the next step is to open a Terminal window.  
 
-To jump right in, go ahead and navigate to the DEV folder with `cd ~/documents/projects/trackr/DEV` and then start up the virtual machine by running `script/start`.  This startup may take a minute, so don't be afraid to run and grab some coffee.  Once it's up and running, you'll see a "Startup Complete" message in the terminal window and you can visit your virtual server at [trackr-dev.com](http://www.trackr-dev.com/).
+1. Make a project directory with the command `mkdir ~/documents/projects`  
+2. Then navigate to that directory by using `cd ~/documents/projects`  
+3. Fetch the project from the githubt with `git clone https://github.com/ubcs-io/trackr.git`
+4. Change directories with `cd ~/documents/projects/trackr/DEV` 
+5. Start up the virtual machine by running `script/start` This startup may take a minute. 
+6. Look for a "Startup Complete" message and visit the server at [trackr-dev.com](http://www.trackr-dev.com/).
 
 As you make changes in the files on your local machine, you'll see the changes reflected in the site that's served up in your browser.
 
