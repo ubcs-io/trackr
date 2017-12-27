@@ -20,11 +20,17 @@ Please note that the DEV environment code is distributed under a different licen
 
 When you activate the development environment using script/start, you are starting up a virtual machine locally, which can then be accessed through a brower.  This allows you to make changes to the files on your machine, and then view the changes live through a browser.  This happens by changing the hosts file on your local machine, so that when you visit trackr-dev.com, it points your browser to the virtual machine instead of an external server.
 
+#### How Do I Start?
+
+Start by downloading VirtualBox and Vagrant, linked in the DEV folder of this repository.  If you've finished that and you're working on a Mac, the next step is to open a Terminal window.  Start by making a project directory with the command `mkdir ~/documents/projects`.  Then navigate to that directory by using `cd ~/documents/projects`.  Once you're in your new project directory, fetch the project from the git repo by using `git clone https://github.com/ubcs-io/trackr.git`
+
+To jump right in, go ahead and navigate to the DEV folder with `cd ~/documents/projects/trackr/DEV` and then start up the virtual machine by running `script/start`.  This startup may take a minute, so don't be afraid to run and grab some coffee.  Once it's up and running, you'll see a "Startup Complete" message in the terminal window and you can visit your virtual server at [trackr-dev.com](http://www.trackr-dev.com/).
+
+As you make changes in the files on your local machine, you'll see the changes reflected in the site that's served up in your browser.
+
 ### Contributing
 
 If you see a change you'd like to make, go ahead and fork a copy of this repository and make a pull request.  If you're looking for ideas, check through the 'issues' section of the repo to see if there are any that you think you'd like to try your hand at.  If you're interested in an issue but would like help understanding the codebase, feel free to leave a comment on the issue.
 
-### Don't Ignore the .gitignore
-
-Some files don't need to be tracked by version control, sometimes because they contain sensitive information and other times they contain local information (like logs) that aren't relevant to others.  For this repository, the .gitignore file is not tracked, but when you clone it, you may find a number of files that are worth ignoring.
+To make changes, go ahead and fork this repository, push your changes to a new branch on that repository, and then make a pull request.
 
