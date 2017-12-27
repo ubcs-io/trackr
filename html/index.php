@@ -2,6 +2,8 @@
 
 include ("model/db/operations.php");
 
+include ("model/dashboard/widget.php");
+
 include ("controller/authorization.php");
 
 include ("controller/header.php");

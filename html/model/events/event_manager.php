@@ -2,6 +2,26 @@
 
 class event_manager extends db {
 
+  /*
+   *
+   */
+
+ public function set_event_details ( $id ) {
+
+    $this->id = $id;
+
+    // Fetch the other event values
+    $sql = "SELECT * FROM tracked_events WHERE id = " . $this->id;
+
+    $event_details = $this->query( $sql );
+
+    $this->name = $event_details['name'];
+    $this->type = $event_details['type'];
+    $this->date_added = $event_details['date_added'];
+    $this->description = $event_details['description'];
+  
+  }
+
   /* 
    * @param $event_name string
    * @param $type string
@@ -23,6 +43,25 @@ class event_manager extends db {
   }
 
   /* 
+   * @param $event_id string
+   * @param $field_to_update string
+   * @param $value string
+   *
+   * Update an existing event by providing the current name and the column / value to update
+   *
+   */
+
+  public function update_event ( $event_id, $field_to_update, $value ) {
+
+    // Create a new event in the tracked_events table
+    $sql = "UPDATE tracked_events SET `" . $field_to_update . "` = '" . $value . "' WHERE id = '" . $event_id . "'";
+
+    $this->query( $sql );
+
+  }
+
+
+  /* 
    * @param $current_name string
    * @param $field_to_update string
    * @param $value string
@@ -31,14 +70,16 @@ class event_manager extends db {
    *
    */
 
-  public function update_event ( $current_name, $field_to_update, $value ) {
+  public function event_status (  ) {
 
     // Create a new event in the tracked_events table
-    $sql = "UPDATE tracked_events SET `" . $field_to_update . "` = '" . $value . "' WHERE id = '" . $current_name . "'";
+    $sql = "SELECT * FROM " . $this->name . " 
+    WHERE date > DATE_SUB(CURDATE(), INTERVAL 1 DAY)";
 
     $this->query( $sql );
 
   }
+
 
 
   /* 
