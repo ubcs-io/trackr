@@ -37,7 +37,7 @@ CREATE TABLE IF NOT EXISTS `tracked_events` (
   `image_url` varchar(255),
   `active` int(11) NOT NULL,
   UNIQUE KEY `id` (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
 -- Insert sample data to the main table
@@ -60,7 +60,7 @@ CREATE TABLE IF NOT EXISTS `Affect` (
   `value` int(11) NOT NULL,
   `active` int(11) NOT NULL,
   UNIQUE KEY `id` (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 CREATE TABLE IF NOT EXISTS `Activity` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -68,7 +68,7 @@ CREATE TABLE IF NOT EXISTS `Activity` (
   `value` int(11) NOT NULL,
   `active` int(11) NOT NULL,
   UNIQUE KEY `id` (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 CREATE TABLE IF NOT EXISTS `Meditation` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -76,7 +76,7 @@ CREATE TABLE IF NOT EXISTS `Meditation` (
   `value` int(11) NOT NULL,
   `active` int(11) NOT NULL,
   UNIQUE KEY `id` (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 -- --------------------------------------------------------

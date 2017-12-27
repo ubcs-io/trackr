@@ -11,14 +11,16 @@ class event_manager extends db {
     $this->id = $id;
 
     // Fetch the other event values
-    $sql = "SELECT * FROM tracked_events WHERE id = " . $this->id;
+    $sql = "SELECT * FROM tracked_events WHERE id = '" . $this->id . "'";
 
     $event_details = $this->query( $sql );
+    $event = $event_details[0];
 
-    $this->name = $event_details['name'];
-    $this->type = $event_details['type'];
-    $this->date_added = $event_details['date_added'];
-    $this->description = $event_details['description'];
+    $this->name = $event['name'];
+    $this->type = $event['type'];
+    $this->delay = $event['reset'];
+    $this->date_added = $event['date_added'];
+    $this->description = $event['description'];
   
   }
 
@@ -33,6 +35,8 @@ class event_manager extends db {
    */
 
   public function add_event ( $event_name, $type, $description, $image_url = NULL ) {
+
+    $description = $this->con->real_escape_string($description);
 
     // Create a new event in the tracked_events table
     $sql = "INSERT INTO  tracked_events (`date_added`, `name`, `type`, `description`, `image_url`, `active`) 
@@ -70,14 +74,28 @@ class event_manager extends db {
    *
    */
 
+// SELECT * FROM Meditation WHERE date >= current_timestamp - interval '7' day;
+// SELECT * FROM Meditation WHERE date >= current_timestamp - interval '1' minute;
+
   public function event_status (  ) {
 
+    // Default to the 
+    $this->background = "/red.png";
+    $this->status = FALSE;
+
     // Create a new event in the tracked_events table
-    $sql = "SELECT * FROM " . $this->name . " 
-    WHERE date > DATE_SUB(CURDATE(), INTERVAL 1 DAY)";
+    $sql = "SELECT COUNT(*) FROM `" . $this->name . "` 
+    WHERE date >= current_timestamp - interval '" . $this->delay . "' day";
 
-    $this->query( $sql );
+    $status = $this->query( $sql );
 
+    if ($status[0]["COUNT(*)"] > 0) {
+
+      $this->status = TRUE;
+      $this->background = "/green.png";
+
+    }
+   
   }
 
 
@@ -103,7 +121,7 @@ class event_manager extends db {
         `value` int(11) NOT NULL,
         `active` int(11) NOT NULL,
         UNIQUE KEY `id` (`id`)
-      ) ENGINE=MyISAM DEFAULT CHARSET=latin1";
+      ) ENGINE=MyISAM DEFAULT CHARSET=utf8";
 
       $this->query( $sql );
 

@@ -2,6 +2,8 @@
 
 include ("model/db/operations.php");
 
+include ("model/events/event_manager.php");
+
 include ("model/dashboard/widget.php");
 
 include ("controller/authorization.php");
@@ -9,6 +11,9 @@ include ("controller/authorization.php");
 include ("controller/header.php");
 
 include ("view/header.php");
+
+// Turn off all error reporting
+error_reporting(0);
 
 ?>
 
