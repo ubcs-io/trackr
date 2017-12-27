@@ -19,7 +19,7 @@ static_ip="192.168.50.69"
 # will be mapped to their corresponding index in guest_directories
 # host directories can be a path relative to this project directory
 # guest directories ,ust be specified with an absolute path
-host_folders[0]="/Users/USERNAME/documents/projects/trackr/html"
+host_folders[0]="/Users/$USER/documents/projects/trackr/html"
 guest_folders[0]="/var/www/html/www.trackr-dev.com/public_html"
 
 
