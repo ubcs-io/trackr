@@ -1,0 +1,9 @@
+
+
+*.DS_Store
+**/Vagrantfile
+**/.vagrant/**
+**/logs/*
+
+**/vm_config.sh
+
