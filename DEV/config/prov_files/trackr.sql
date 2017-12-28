@@ -56,8 +56,18 @@ INSERT INTO `tracked_events` (`date_added`, `name`, `type`, `description`, `imag
 -- Table structure for three initial events`
 --
 
+CREATE TABLE IF NOT EXISTS `event_log` (
+  `event_id` int(11) NOT NULL AUTO_INCREMENT,
+  `table_name` datetime NOT NULL,
+  UNIQUE KEY `event_id` (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Table structure for the initial events`
+--
+
 CREATE TABLE IF NOT EXISTS `Affect` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL,
   `date` datetime NOT NULL,
   `value` int(11) NOT NULL,
   `active` int(11) NOT NULL,
@@ -65,7 +75,7 @@ CREATE TABLE IF NOT EXISTS `Affect` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 CREATE TABLE IF NOT EXISTS `Activity` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL,
   `date` datetime NOT NULL,
   `value` int(11) NOT NULL,
   `active` int(11) NOT NULL,
@@ -73,7 +83,7 @@ CREATE TABLE IF NOT EXISTS `Activity` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 CREATE TABLE IF NOT EXISTS `Meditation` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL,
   `date` datetime NOT NULL,
   `value` int(11) NOT NULL,
   `active` int(11) NOT NULL,
@@ -81,7 +91,7 @@ CREATE TABLE IF NOT EXISTS `Meditation` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 CREATE TABLE IF NOT EXISTS `Code Work` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL,
   `date` datetime NOT NULL,
   `value` int(11) NOT NULL,
   `active` int(11) NOT NULL,
@@ -89,7 +99,7 @@ CREATE TABLE IF NOT EXISTS `Code Work` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 CREATE TABLE IF NOT EXISTS `Energy` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL,
   `date` datetime NOT NULL,
   `value` int(11) NOT NULL,
   `active` int(11) NOT NULL,
