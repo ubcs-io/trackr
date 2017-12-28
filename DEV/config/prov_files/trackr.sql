@@ -58,8 +58,8 @@ INSERT INTO `tracked_events` (`date_added`, `name`, `type`, `description`, `imag
 
 CREATE TABLE IF NOT EXISTS `event_log` (
   `event_id` int(11) NOT NULL AUTO_INCREMENT,
-  `table_name` datetime NOT NULL,
-  UNIQUE KEY `event_id` (`id`)
+  `table_name` varchar(255) NOT NULL,
+  UNIQUE KEY `event_id` (`event_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
