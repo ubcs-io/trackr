@@ -82,19 +82,33 @@ class event_manager extends db {
     // Default to the 
     $this->background = "/red.png";
     $this->status = FALSE;
+    $this->percentage = NULL;
 
     // Create a new event in the tracked_events table
-    $sql = "SELECT COUNT(*) FROM `" . $this->name . "` 
-    WHERE date >= current_timestamp - interval '" . $this->delay . "' day";
+    $sql = "SELECT * FROM `" . $this->name . "` 
+    WHERE date >= current_timestamp - interval '" . $this->delay . "' day
+    ORDER BY date DESC";
 
     $status = $this->query( $sql );
 
-    if ($status[0]["COUNT(*)"] > 0) {
+    if (isset($status[0]["date"])) {
 
       $this->status = TRUE;
+
+      // Set the background image for binary objects
       $this->background = "/green.png";
 
     }
+
+    // Cast the most recent value as an integer
+    $value = (int) $status[0]["value"];
+
+    // Find the percentage and round to nearest tenth
+    $this->percentage_label = round ( ( $value / 7 ) * 100, 1);   
+
+    // If the label is not 0, make them equal, otherwise default to 5%
+    $this->percentage = ( $this->percentage_label == 0 ? 5 : $this->percentage_label );
+
    
   }
 
