@@ -9,7 +9,15 @@
 	<?php
 
 		// For each of those modules that is active, call the widget view
-		foreach ($db->scalar_widgets as $widget) { ?>
+		foreach ($db->scalar_widgets as $widget) { 
+
+		$event = new event_manager( $con );
+
+		$event->set_event_details( $widget['id'] );
+
+		$event->event_status( );
+
+		?>
 
 			<div class="col-xs-6 col-md-6">
 
