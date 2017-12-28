@@ -20,7 +20,7 @@ $scale = array_fill(1, 7, 0);
           <?php 
 
             foreach ($scale as $key => $value) {
-              echo '<a href="?log=true&value=' . $key . '&event=' . $widget['name'] . '"><button type="button" class="btn btn-default">' . $key . '</button>';
+              echo '<a href="?log=true&value=' . $key . '&event=' . $widget['name'] . '"><button type="button" class="btn btn-default">' . $key . '</button></a>';
             }
 
           ?>
