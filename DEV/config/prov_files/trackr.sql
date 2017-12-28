@@ -45,7 +45,7 @@ CREATE TABLE IF NOT EXISTS `tracked_events` (
 
 INSERT INTO `tracked_events` (`date_added`, `name`, `type`, `description`, `image_url`, `active`) VALUES
 ('2017-12-09 00:00:00', 'Affect', 'scale', 'This is here to measure how you feel at a given time', NULL, 1),
-('2017-12-10 00:00:00', 'Energy', 'scale', 'This measures how much energy you feel like you had at a particular time', NULL, 1),
+('2017-12-10 00:00:00', 'Energy', 'scale', 'This measures how much energy you feel like you had', NULL, 1),
 ('2017-12-11 00:00:00', 'Activity', 'binary', 'This is to track if you did something physical or worked out', NULL, 1),
 ('2017-12-12 00:00:00', 'Code Work', 'binary', 'Tracking whether or not time was spent working on a code project', NULL, 1),
 ('2017-12-13 00:00:00', 'Meditation', 'binary', 'This is a placeholder event to track if you had some zen time', NULL, 1);
