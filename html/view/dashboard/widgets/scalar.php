@@ -19,15 +19,15 @@
 
 		?>
 
-			<div class="col-xs-6 col-md-6">
+			<div class="col-sm-6 col-md-6">
 
-				<div class="lead"><?php echo $widget['name']; ?> <br></div>
+				<div class="lead"><?php echo $event->name; ?> <br></div>
 					<div class="progress">
-					  <div class="progress-bar progress-bar-danger progress-bar-striped active" role="progressbar" aria-valuenow="5" aria-valuemin="0" aria-valuemax="100" style="width: 5%">
+					  <div class="progress-bar progress-bar-default progress-bar-striped active" role="progressbar" aria-valuenow="<?php echo $event->percentage; ?>" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo $event->percentage; ?>%"> <?php echo $event->percentage_label; ?>%
 					  </div>
 					</div>
 
-				<span class="text-muted"><?php echo $widget['description']; ?></span>
+				<span class="text-muted"><?php echo $event->description; ?></span>
 			</div>
 			
 		<?php }
