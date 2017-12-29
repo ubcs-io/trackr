@@ -53,7 +53,7 @@ INSERT INTO `tracked_events` (`date_added`, `name`, `type`, `description`, `imag
 -- --------------------------------------------------------
 
 --
--- Table structure for three initial events`
+-- Table structure for main event log`
 --
 
 CREATE TABLE IF NOT EXISTS `event_log` (
