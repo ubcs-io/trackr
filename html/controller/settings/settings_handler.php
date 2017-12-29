@@ -35,9 +35,11 @@ if (isset($_GET['view']) && $_GET['view'] == "true") {
 
 } elseif (isset($_GET['description'])) {
 
-
 	$event_manager->update_event ( $event_manager->id, "name", $event_name );
 	$event_manager->update_event ( $event_manager->id, "description", $_GET['description'] );
+
+	// Now that a new event has been created, update the tables
+	$event_manager->build_tables( );
 
 	// Redirect to the overview page without query strings
     header("Location: http://www.trackr-dev.com/analytics/settings.php");
