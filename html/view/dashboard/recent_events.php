@@ -2,19 +2,20 @@
 <?php
 
 ?>
-
+  <div class="row">
   <h2 class="sub-header">Recent Events</h2>
-  <div class="table-responsive">
-   
-    <table class="table table-striped">
-      <thead>
-        <tr>
-          <th>Event Name</th>
-          <th>Date</th>
-          <th>Value</th>
-        </tr>
-      </thead>
-      <tbody>
+  
+    <div class="table-responsive">
+     
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Event Name</th>
+            <th>Date</th>
+            <th>Value</th>
+          </tr>
+        </thead>
+        <tbody>
 
 	<?php
 
@@ -35,5 +36,5 @@
 
       </tbody>
     </table>
-
   </div>
+</div>
