@@ -4,6 +4,8 @@ include ("model/db/operations.php");
 
 include ("model/events/event_manager.php");
 
+include ("model/dashboard/recent_events.php");
+
 include ("model/dashboard/widget.php");
 
 include ("controller/authorization.php");
@@ -13,7 +15,7 @@ include ("controller/header.php");
 include ("view/header.php");
 
 // Turn off all error reporting
-// error_reporting(0);
+//error_reporting(0);
 
 ?>
 
@@ -37,26 +39,8 @@ include ("view/header.php");
 
           </div>
 
-          <h2 class="sub-header">Recent Events</h2>
-          <div class="table-responsive">
-           
-            <table class="table table-striped">
-              <thead>
-                <tr>
-                  <th>#</th>
-                  <th>Date</th>
-                  <th>Event Type</th>
-                  <th>Value</th>
-                </tr>
-              </thead>
-              <tbody>
-                <?php #getRows ($con, $start_date); ?>
-              </tbody>
-            </table>
+          <?php include ("controller/dashboard/events_overview.php"); ?>
 
-             // Show the recent events that are being tracked actively
-
-          </div>
         </div>
       </div>
     </div>
