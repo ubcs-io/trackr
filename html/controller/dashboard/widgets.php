@@ -11,17 +11,20 @@ $db->binary_widgets = $db->query( $sql );
 $sql = "SELECT * FROM tracked_events WHERE type = 'scale' AND active = 1 LIMIT 4";
 $db->scalar_widgets = $db->query( $sql );
 
+echo '<div class="row">';
 
-// If there are active BINARY events, show the block
-if ($db->binary_widgets != NULL) {
-	
-	include ("/var/www/html/www.trackr-dev.com/public_html/view/dashboard/widgets/binary.php");
+	// If there are active BINARY events, show the block
+	if ($db->binary_widgets != NULL) {
+		
+		include ("/var/www/html/www.trackr-dev.com/public_html/view/dashboard/widgets/binary.php");
 
-}
+	}
 
-// If there are qualifying SCALAR widgets, show the block below
-if ($db->scalar_widgets != NULL) {
-	
-	include ("/var/www/html/www.trackr-dev.com/public_html/view/dashboard/widgets/scalar.php");
+	// If there are qualifying SCALAR widgets, show the block below
+	if ($db->scalar_widgets != NULL) {
+		
+		include ("/var/www/html/www.trackr-dev.com/public_html/view/dashboard/widgets/scalar.php");
 
-}
+	}
+
+echo '</div>';
