@@ -6,7 +6,7 @@ class recent_events extends db {
 
   /* 
    * 
-   * return boolean
+   * set events
    *
    * Fetch the last 5 events
    *
