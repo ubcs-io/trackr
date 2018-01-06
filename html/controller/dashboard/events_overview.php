@@ -1,27 +1,15 @@
 <?php 
 
 // Create a new db objects
-$db = new db($con);
+$recent_events = new recent_events($con);
 
-// Fetch the binary tracked events
-$sql = "SELECT * FROM tracked_events WHERE type = 'binary' AND active = 1 LIMIT 4";
-$db->binary_widgets = $db->query( $sql );
-
-// Fetch the scalar tracked events
-$sql = "SELECT * FROM tracked_events WHERE type = 'scale' AND active = 1 LIMIT 4";
-$db->scalar_widgets = $db->query( $sql );
+// Fetch the recent events
+$recent_events->fetch_recent_5();
 
 
-// If there are active BINARY events, show the block
-if ($db->binary_widgets != NULL) {
+// // If there are recent events show the table
+if ($recent_events->events != NULL) {
 	
-	include ("/var/www/html/www.trackr-dev.com/public_html/view/dashboard/widgets/binary.php");
-
-}
-
-// If there are qualifying SCALAR widgets, show the block below
-if ($db->scalar_widgets != NULL) {
-	
-	include ("/var/www/html/www.trackr-dev.com/public_html/view/dashboard/widgets/scalar.php");
+	include ("/var/www/html/www.trackr-dev.com/public_html/view/dashboard/recent_events.php");
 
 }
