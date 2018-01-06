@@ -21,7 +21,7 @@
 		// For each of those modules that is active, call the widget view
 
 		foreach ($recent_events->events as $event) { 
-			#var_dump($event);
+
 			?>
 			    <tr>
                   <td><?php echo $event["table_name"]; ?></td>

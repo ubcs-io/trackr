@@ -39,8 +39,8 @@ class db {
 
     $query_result = $this->con->query( $sql . ";" );
 
-    #var_dump($sql);
-    #echo "Execute failed: (" . $this->con->errno . ") " . $this->con->error;
+    // var_dump($sql);
+    // echo "Execute failed: (" . $this->con->errno . ") " . $this->con->error;
 
     while ($row = mysqli_fetch_assoc($query_result)) {
 
