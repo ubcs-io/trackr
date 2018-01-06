@@ -2,9 +2,10 @@
 <?php
 
 ?>
+  <hr>
   <div class="row">
   <h2 class="sub-header">Recent Events</h2>
-  
+
     <div class="table-responsive">
      
       <table class="table table-striped">
