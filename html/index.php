@@ -33,11 +33,7 @@ include ("view/header.php");
             </div>
           </div>
 
-          <div class="row placeholders">
-
-            <?php include ("controller/dashboard/widgets.php"); ?>
-
-          </div>
+          <?php include ("controller/dashboard/widgets.php"); ?>
 
           <?php include ("controller/dashboard/events_overview.php"); ?>
 
