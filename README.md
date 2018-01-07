@@ -39,3 +39,10 @@ If you see a change you'd like to make, go ahead and fork a copy of this reposit
 
 To make changes, go ahead and fork this repository, push your changes to a new branch on that repository, and then make a pull request.
 
+### Troubleshooting
+
+1. **When running script/start, I get an error that Virtualbox 5.2 is not supported:**  When installing VB, use 5.1.  5.2 isn't currently tested / supported for the virtual environment.
+
+2. **My browser show an error that reads 'ERR_NAME_NOT_RESOLVED':**  Make sure you've already started the virtual machine and waited for it to finish loading.
+
+3. **My browser show an error that reads 'ERR_CONNECTION_REFUSED' AFTER running script/start:**  Verify your hosts file is not read only by using `sudo chmod 666 /etc/hosts`, flushing the DNS cache, restarting the VM and then booting it up again.
