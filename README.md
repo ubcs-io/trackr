@@ -22,7 +22,7 @@ Please note that the DEV environment code is distributed under a different licen
 
 When you activate the development environment using script/start, you are starting up a virtual machine locally, which can then be accessed through a brower.  This allows you to make changes to the files on your machine, and then view the changes live through a browser.  This happens by changing the hosts file on your local machine, so that when you visit trackr-dev.com, it points your browser to the virtual machine instead of an external server.
 
-#### How Do I Start?
+## Setup Steps
 
 Start by downloading VirtualBox (version 5.1 or earlier) and Vagrant, [descriptions and links](https://github.com/ubcs-io/trackr/tree/master/DEV) in the DEV folder of this repository.  If you've finished that and you're working on a Mac, the next step is to open a Terminal window.  
 
