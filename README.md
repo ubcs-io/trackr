@@ -2,6 +2,8 @@
 
 This is a small application that can be used to log daily events and behaviors.  Included in this repository are the necessary scripts to download and develop locally, along with provisioning files for a mock database.
 
+![Trackr Dashboard](html/view/media/Trackr.png)
+
 ## Trackr Use Cases
 
 Use this to track when you're working out, spending some time practicing a skill, or just need to track a regular event.  Use the dashboard to see how you're keeping up on those tasks, and whether there's any daily events that you haven't gotten to yet.  Use it to track health events (allergies, affect, and medication), behaviors (meditation, working out, practicing a skill), or chores (ending the day without dishes, etc).
@@ -22,7 +24,7 @@ When you activate the development environment using script/start, you are starti
 
 #### How Do I Start?
 
-Start by downloading VirtualBox and Vagrant, linked in the DEV folder of this repository.  If you've finished that and you're working on a Mac, the next step is to open a Terminal window.  
+Start by downloading VirtualBox (version 5.1 or earlier) and Vagrant, [descriptions and links](https://github.com/ubcs-io/trackr/tree/master/DEV) in the DEV folder of this repository.  If you've finished that and you're working on a Mac, the next step is to open a Terminal window.  
 
 1. Make a project directory with the command `mkdir ~/documents/projects`  
 2. Then navigate to that directory by using `cd ~/documents/projects`  
