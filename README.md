@@ -2,6 +2,8 @@
 
 This is a small application that can be used to log daily events and behaviors.  Included in this repository are the necessary scripts to download and develop locally, along with provisioning files for a mock database.
 
+![Trackr Dashboard](html/view/media/Trackr.png)
+
 ## Trackr Use Cases
 
 Use this to track when you're working out, spending some time practicing a skill, or just need to track a regular event.  Use the dashboard to see how you're keeping up on those tasks, and whether there's any daily events that you haven't gotten to yet.  Use it to track health events (allergies, affect, and medication), behaviors (meditation, working out, practicing a skill), or chores (ending the day without dishes, etc).
@@ -20,7 +22,7 @@ Please note that the DEV environment code is distributed under a different licen
 
 When you activate the development environment using script/start, you are starting up a virtual machine locally, which can then be accessed through a brower.  This allows you to make changes to the files on your machine, and then view the changes live through a browser.  This happens by changing the hosts file on your local machine, so that when you visit trackr-dev.com, it points your browser to the virtual machine instead of an external server.
 
-#### How Do I Start?
+## Setup Steps
 
 Start by downloading VirtualBox (version 5.1 or earlier) and Vagrant, [descriptions and links](https://github.com/ubcs-io/trackr/tree/master/DEV) in the DEV folder of this repository.  If you've finished that and you're working on a Mac, the next step is to open a Terminal window.  
 
@@ -39,3 +41,10 @@ If you see a change you'd like to make, go ahead and fork a copy of this reposit
 
 To make changes, go ahead and fork this repository, push your changes to a new branch on that repository, and then make a pull request.
 
+### Troubleshooting
+
+1. **When running script/start, I get an error that Virtualbox 5.2 is not supported:**  When installing VB, use 5.1.  5.2 isn't currently tested / supported for the virtual environment.
+
+2. **My browser show an error that reads 'ERR_NAME_NOT_RESOLVED':**  Make sure you've already started the virtual machine and waited for it to finish loading.
+
+3. **My browser show an error that reads 'ERR_CONNECTION_REFUSED' AFTER running script/start:**  Verify your hosts file is not read only by using `sudo chmod 666 /etc/hosts`, flushing the DNS cache, restarting the VM and then booting it up again.
