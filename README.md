@@ -25,8 +25,6 @@ When you activate the development environment using script/start, you are starti
 ## Setup Steps
 
 Start by downloading VirtualBox (version 5.1 or earlier) and Vagrant, [descriptions and links](https://github.com/ubcs-io/trackr/tree/master/DEV) in the DEV folder of this repository.  If you've finished that and you're working on a Mac, the next step is to open a Terminal window.  
-
-1. Make a project directory with the command `mkdir ~/documents/projects`  
 2. Then navigate to that directory by using `cd ~/documents/projects`  
 3. Fetch the project from the githubt with `git clone https://github.com/ubcs-io/trackr.git`
 4. Change directories with `cd ~/documents/projects/trackr/DEV` 
@@ -48,3 +46,8 @@ To make changes, go ahead and fork this repository, push your changes to a new b
 2. **My browser show an error that reads 'ERR_NAME_NOT_RESOLVED':**  Make sure you've already started the virtual machine and waited for it to finish loading.
 
 3. **My browser show an error that reads 'ERR_CONNECTION_REFUSED' AFTER running script/start:**  Verify your hosts file is not read only by using `sudo chmod 666 /etc/hosts`, flushing the DNS cache, restarting the VM and then booting it up again.
+
+4. **I placed the repository in a different directory:**  If you used a directory other than `/Users/$USER/documents/projects` then you'll need to update the `vm_config.sh` file.  Once you're there, update the `host_folders[0]` to point to the correct directory (wherever you placed the repository)
+
+5. **What password do I use for script/start:**  If you're prompted for a password when running script/start or script/shutdown, use the password for your local machine.  The command line is prompting you for your password because the setup script is using sudo to make changes to files on your machine.
+
