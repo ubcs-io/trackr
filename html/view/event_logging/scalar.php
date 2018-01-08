@@ -12,9 +12,14 @@ $scale = array_fill(1, 7, 0);
     // For each of those modules that is active, call the widget view
     foreach ($db->scalar_widgets_logging as $widget) { ?>
 
-      <div class="col-sm-6 col-md-4">
+      <div class="col-xl-2 col-lg-4 col-md-12 col-sm-12">
+        <div class="col-12 well">
+          <a href="settings.php?view=true&event=<?php echo $widget['name']; ?>" class="btn btn-default pull-right" role="button">
+            <span class="glyphicon glyphicon-wrench" aria-hidden="true"></span>&nbsp;&nbsp;Edit
+          </a>
         <h3><?php echo $widget['name']; ?></h3>
         <p><?php echo $widget['description']; ?></p>
+
         <div class="btn-group" role="group">
 
           <?php 
@@ -25,6 +30,7 @@ $scale = array_fill(1, 7, 0);
 
           ?>
 
+          </div>
         </div>
       </div>
       
