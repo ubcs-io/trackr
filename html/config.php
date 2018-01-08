@@ -1,5 +1,9 @@
 <?php 
 
+// Turn off all error reporting
+// Disabled by default
+// error_reporting(0);
+
 // Use this variable for setting a subdirectory on a server
 // If it lives at root, leave this blank
 $location = "";
