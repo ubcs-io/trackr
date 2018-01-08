@@ -6,18 +6,19 @@ if (isset($_COOKIE['trackr']) && $_COOKIE['trackr'] == "Authorized") {
 
   // User has permission already
 
-} elseif (isset($_GET['user']) && $_GET['pass'] == "userpassword") {
+} elseif (isset($_GET['user']) && $_GET['user'] == $user_username && $_GET['pass'] == $user_password) {
 
 	// Set a cookie with the value "Authorized"
 	setcookie('trackr', 'Authorized', time() + (365 * 24 * 60), "/" );
 
 } else {
 
-	# The block below is commented out since each authorization file should be different
-	# Please do not use this default layout in a live project
-
 	// Otherwise, send them someplace else
-	// header ("Location: http://lmgtfy.com/");
-	// exit;
+
+	// Verify authorization is enabled, defaults to no
+	if ($authorization_enabled === "YES") {
+		header ("Location: http://google.com/");
+		exit;
+	}
 
 }
