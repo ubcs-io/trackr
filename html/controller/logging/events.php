@@ -14,15 +14,16 @@ $db->scalar_widgets_logging = $db->query( $sql );
 
 // If there are active BINARY events, show the block
 if ($db->binary_widgets_logging != NULL) {
-	
-	include ("/var/www/html/www.trackr-dev.com/public_html/view/event_logging/binary.php");
+
+
+	include ( $_SERVER['DOCUMENT_ROOT'] . "/view/event_logging/binary.php");	
 
 }
 
 // If there are qualifying SCALAR widgets, show the block below
 if ($db->scalar_widgets_logging != NULL) {
 	
-	include ("/var/www/html/www.trackr-dev.com/public_html/view/event_logging/scalar.php");
+	include ( $_SERVER['DOCUMENT_ROOT'] . "/view/event_logging/scalar.php");	
 
 }
 

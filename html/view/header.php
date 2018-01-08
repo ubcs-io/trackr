@@ -11,13 +11,11 @@
 
     <title>Daily Dashboard</title>
 
-  <?php #var_dump($_SERVER['HTTP_HOST']); ?>    
-
     <!-- Bootstrap core CSS -->
-    <link href="/view/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="view/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="/view/dist/css/dashboard.css" rel="stylesheet">
+    <link href="view/dist/css/dashboard.css" rel="stylesheet">
 
   </head>
 
@@ -37,7 +35,7 @@
 
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
-              <li><a href="/log.php">Log</a></li>
+              <li><a href="log.php">Log</a></li>
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
