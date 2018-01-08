@@ -16,14 +16,14 @@ $db->scalar_widgets_logging = $db->query( $sql );
 if ($db->binary_widgets_logging != NULL) {
 
 
-	include ( $_SERVER['DOCUMENT_ROOT'] . "/view/event_logging/binary.php");	
+	include ( $_SERVER['DOCUMENT_ROOT'] . $location . "/view/event_logging/binary.php");	
 
 }
 
 // If there are qualifying SCALAR widgets, show the block below
 if ($db->scalar_widgets_logging != NULL) {
 	
-	include ( $_SERVER['DOCUMENT_ROOT'] . "/view/event_logging/scalar.php");	
+	include ( $_SERVER['DOCUMENT_ROOT'] . $location . "/view/event_logging/scalar.php");	
 
 }
 

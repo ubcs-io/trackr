@@ -9,6 +9,6 @@ $recent_events->fetch_recent_5();
 // // If there are recent events show the table
 if ($recent_events->events != NULL) {
 
-	include ( $_SERVER['DOCUMENT_ROOT'] . "/view/dashboard/recent_events.php");
+	include ( $_SERVER['DOCUMENT_ROOT'] . $location . "/view/dashboard/recent_events.php");
 
 }
