@@ -1,18 +1,8 @@
 <?php 
 
-
-  /*
-   * For simplicity, these are included here instead of a separate file.
-   * Remove this section / move it to a different file accordingly.
-   */
-
-$server = "localhost";
-$username = "root";
-$password = "userpassword";
-$dbname = "trackr_record";
+include ( "config.php");
 
 $con = new mysqli($server, $username, $password, $dbname);
-
 
 class db {
 

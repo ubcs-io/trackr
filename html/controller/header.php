@@ -1,8 +1,4 @@
-<?php 
-
-// Use this variable for setting a subdirectory on a server
-// If it lives at root, leave this blank
-$location = "";
+<?php 	
 
 // Prepare range / start date vars
 if (isset($_GET['range'])) {
