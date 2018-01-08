@@ -20,7 +20,7 @@
 			?>
 
 		    <div class="col-xs-6 col-sm-3 placeholder">
-		      <img src="http://www.trackr-dev.com/view/media<?php echo $event->background; ?>" width="200" height="200" class="img-responsive">
+		      <img src="view/media<?php echo $event->background; ?>" width="200" height="200" class="img-responsive">
 		      <h4><?php echo $event->name; ?></h4>
 		      <span class="text-muted"><?php echo $event->description; ?></span>
 		    </div>

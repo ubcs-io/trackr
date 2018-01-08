@@ -11,14 +11,13 @@
 
     <title>Daily Dashboard</title>
 
-    <!-- Bootstrap core CSS -->
-    <link href="../view/dist/css/bootstrap.min.css" rel="stylesheet">
+  <?php #var_dump($_SERVER['HTTP_HOST']); ?>    
 
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link href="../view/dist/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <!-- Bootstrap core CSS -->
+    <link href="/view/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="../view/dist/css/dashboard.css" rel="stylesheet">
+    <link href="/view/dist/css/dashboard.css" rel="stylesheet">
 
   </head>
 
@@ -38,7 +37,7 @@
 
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
-              <li><a href="http://www.trackr-dev.com/analytics/log.php">Log</a></li>
+              <li><a href="/log.php">Log</a></li>
             </ul>
 
             <ul class="nav navbar-nav navbar-right">

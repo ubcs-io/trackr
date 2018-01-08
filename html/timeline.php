@@ -1,19 +1,19 @@
 <?php 
 
-include ("../model/db/operations.php");
+include ("model/db/operations.php");
 
-include ("../controller/authorization.php");
+include ("controller/authorization.php");
 
-include ("../controller/header.php");
+include ("controller/header.php");
 
-include ("../view/header.php");
+include ("view/header.php");
 
 ?>
 
     <div class="container-fluid">
       <div class="row">
 
-        <?php include ("../view/dashboard/dashboard_sidebar.php"); ?>
+        <?php include ("view/dashboard/dashboard_sidebar.php"); ?>
 
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
           
@@ -31,4 +31,4 @@ include ("../view/header.php");
       </div>
     </div>
 
-<?php include ("../view/footer.php"); ?>
+<?php include ("view/footer.php"); ?>

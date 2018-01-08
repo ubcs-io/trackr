@@ -20,7 +20,7 @@ if (isset($_GET['event'])) {
 if (isset($_GET['view']) && $_GET['view'] == "true") {
 
 	// Show the details of the particular event
-	include ("../view/settings/edit_event.php");
+	include ("view/settings/edit_event.php");
 
 } elseif (isset($_GET['description']) && $_GET['id'] == "") {
 
@@ -30,7 +30,7 @@ if (isset($_GET['view']) && $_GET['view'] == "true") {
 	$event_manager->build_tables( );
 
 	// Redirect to the overview page without query strings
-    header("Location: http://www.trackr-dev.com/analytics/settings.php");
+    header("Location: settings.php");
     exit;
 
 } elseif (isset($_GET['description'])) {
@@ -42,7 +42,7 @@ if (isset($_GET['view']) && $_GET['view'] == "true") {
 	$event_manager->build_tables( );
 
 	// Redirect to the overview page without query strings
-    header("Location: http://www.trackr-dev.com/analytics/settings.php");
+    header("Location: settings.php");
     exit;
 
 } elseif (isset($_GET['edit']) && $_GET['edit'] == "true") {
@@ -59,13 +59,13 @@ if (isset($_GET['view']) && $_GET['view'] == "true") {
 	}
 	
 	// Redirect to the overview page without query strings
-    header("Location: http://www.trackr-dev.com/analytics/settings.php");
+    header("Location: settings.php");
     exit;
 
 }
 
 // Show the events table so a user can select different events
-include ("../view/settings/events_table.php");
+include ("view/settings/events_table.php");
 
 
 ?>

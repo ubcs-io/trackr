@@ -1,25 +1,25 @@
 <?php 
 
-include ("../model/db/operations.php");
+include ("model/db/operations.php");
 
-include ("../controller/authorization.php");
+include ("controller/authorization.php");
 
-include ("../controller/header.php");
+include ("controller/header.php");
 
-include ("../model/events/event_logger.php");
+include ("model/events/event_logger.php");
 
-include ("../model/events/event_manager.php");
+include ("model/events/event_manager.php");
 
-include ("../controller/logging/handler.php");
+include ("controller/logging/handler.php");
 
-include ("../view/header.php");
+include ("view/header.php");
 
 ?>
 
     <div class="container-fluid">
       <div class="row">
 
-        <?php include ("../view/dashboard/dashboard_sidebar.php"); ?>
+        <?php include ("view/dashboard/dashboard_sidebar.php"); ?>
         
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
           <h1 class="page-header">Settings</h1> 
@@ -30,10 +30,10 @@ include ("../view/header.php");
 
           <div class="lead">Update tracked events, create new events, and generally modify things</div>
 
-            <?php include ("../controller/settings/settings_handler.php"); ?>
+            <?php include ("controller/settings/settings_handler.php"); ?>
 
         </div>
       </div>
     </div>
 
-<?php include ("../view/footer.php"); ?>
+<?php include ("view/footer.php"); ?>
