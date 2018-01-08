@@ -18,15 +18,12 @@ echo '<div class="row">';
 		
 		include ( $_SERVER['DOCUMENT_ROOT'] . "/view/dashboard/widgets/binary.php");
 
-		// echo "Compare: /var/www/html/www.trackr-dev.com/public_html/view/dashboard/widgets/binary.php\n<br>";
-		// echo "Compare: " . $_SERVER['DOCUMENT_ROOT'] . "/view/dashboard/widgets/binary.php";
 	}
 
 	// If there are qualifying SCALAR widgets, show the block below
 	if ($db->scalar_widgets != NULL) {
 		
 		include ( $_SERVER['DOCUMENT_ROOT'] . "/view/dashboard/widgets/scalar.php");
-		#include ("/var/www/html/www.trackr-dev.com/public_html/view/dashboard/widgets/scalar.php");
 
 	}
 
