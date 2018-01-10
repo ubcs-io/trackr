@@ -28,8 +28,8 @@ $db->tracked_events = $db->query( $sql );
 
           $event['status'] = ($event['active'] == 1 ? "Active" : "Inactive");
           $event['status_color'] = ($event['active'] == 1 ? "success" : "danger");
-          $edit_url = "?view=true&event=" . $event['name'];
-          $disable_url = "?edit=true&fields=status&value=disabled&event=" . $event['name'];
+          $edit_url = "?view=true&id=" . $event['id'];
+          $disable_url = "?edit=true&fields=status&value=disabled&id=" . $event['id'];
 
           echo '<tr>';
           echo '<td><span class="lead">' . $event['name'] . '</span></td>';

@@ -1,12 +1,14 @@
 <?php 
 
 // This section detects query strings and does the logging
-$event_manager = new event_manager($con);
+$event_manager = new event_manager( $con );
 
 
 if (isset($_GET['id'])) {
 
-	$event_manager->set_event_details($_GET['id']);
+	$editable_event_id = $_GET['id'];
+
+	$event_manager->set_event_details( $editable_event_id );
 
 }
 
