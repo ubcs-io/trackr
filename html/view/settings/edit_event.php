@@ -1,11 +1,7 @@
 <?php 
 
 $name = $event_manager->name ?: "Event Name";
-
-// Fetch the event details
-$sql = "SELECT * FROM tracked_events WHERE name = '$name'";
-$event_manager->event_details = $event_manager->query( $sql );
-
+$description = $event_manager->description ?: "Give some context for what you are planning on tracking";
 $instruction = ($name == "Event Name") ? "Create Event" : "Update";
 
 ?>
@@ -32,7 +28,7 @@ $instruction = ($name == "Event Name") ? "Create Event" : "Update";
 
     <div class="form-group">
       <label for="description">Description</label>
-      <input type="text" name="description" class="form-control" id="description" value="<?php echo $event_manager->description; ?>">
+      <input type="text" name="description" class="form-control" id="description" value="<?php echo $description; ?>">
     </div>
 
   <hr>
@@ -44,13 +40,13 @@ $instruction = ($name == "Event Name") ? "Create Event" : "Update";
     <?php 
 
       // Check whether to show the disable or enable button
-      if ($event_manager->event_details[0]['active'] === "1") { ?>
+      if ($event_manager->status === "1") { ?>
 
         <a href="?edit=true&fields=status&value=disabled&id=<?php echo $event_manager->id; ?>" class="btn btn-danger" role="button">
           <span class="glyphicon glyphicon-pause" aria-hidden="true"></span>&nbsp;&nbsp; Disable
         </a> 
 
-      <?php } elseif ($event_manager->event_details[0]['active'] === "0") { ?>
+      <?php } elseif ($event_manager->status === "0") { ?>
     
         <a href="?edit=true&fields=status&value=enabled&id=<?php echo $event_manager->id; ?>" class="btn btn-success" role="button">
           <span class="glyphicon glyphicon-play" aria-hidden="true"></span>&nbsp;&nbsp; Enable

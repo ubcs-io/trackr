@@ -26,7 +26,7 @@ if (isset($_GET['view']) && $_GET['view'] == "true") {
 
 } elseif (isset($_GET['description']) && $_GET['id'] == "") {
 
-	$event_manager->add_event ( $event_name, "binary", $_GET['description'] ) ;
+	$event_manager->add_event ( $event_name, $_GET['type'], $_GET['description'] ) ;
 
 	// Now that a new event has been created, update the tables
 	$event_manager->build_tables( );

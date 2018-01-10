@@ -19,6 +19,7 @@ class event_manager extends db {
     $this->name = $event['name'];
     $this->type = $event['type'];
     $this->delay = $event['reset'];
+    $this->status = $event['active'];
     $this->date_added = $event['date_added'];
     $this->description = $event['description'];
   
@@ -143,5 +144,12 @@ class event_manager extends db {
 
   }
 
+  /* 
+   * Build the select options for the editing page
+   */
+
+  public function create_type_view ( ) {
+
+  }
 
 }
