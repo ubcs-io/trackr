@@ -1,8 +1,10 @@
 <?php 
 
+
 $name = $event_manager->name ?: "Event Name";
 $description = $event_manager->description ?: "Give some context for what you are planning on tracking";
 $instruction = ($name == "Event Name") ? "Create Event" : "Update";
+$name = $event_manager->name ?: "Event Name";
 
 ?>
 
@@ -19,10 +21,8 @@ $instruction = ($name == "Event Name") ? "Create Event" : "Update";
 
     <div class="form-group">
       <label for="type">Type</label>
-      <select class="form-control" id="type">
-        <?php  ?>
-        <option>Binary</option>
-        <option>Scale</option>
+      <select class="form-control" id="type" name="type">
+        <?php $event_manager->create_type_view( ); ?>
       </select>
     </div>
 

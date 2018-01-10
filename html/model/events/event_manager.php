@@ -150,6 +150,24 @@ class event_manager extends db {
 
   public function create_type_view ( ) {
 
+    $available_types = array('binary', 'scale');
+
+    foreach ($available_types as $type) {
+
+      if ( $this->type == $type ) {
+
+        echo "<option selected>" . ucwords($type) . "</option>";
+
+      } else {
+
+        echo "<option>" . ucwords($type) . "</option>";
+
+      }
+
+    }
+
+
+
   }
 
 }
