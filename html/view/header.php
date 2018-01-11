@@ -9,7 +9,7 @@
     <meta name="author" content="">
     <link rel="icon" href="media/chart.png">
 
-    <title>Daily Dashboard</title>
+    <title>My Daily Dashboard</title>
 
     <!-- Bootstrap core CSS -->
     <link href="view/dist/css/bootstrap.min.css" rel="stylesheet">
