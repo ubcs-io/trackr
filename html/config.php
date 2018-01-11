@@ -1,8 +1,9 @@
 <?php 
 
 // Turn off all error reporting
-// Disabled by default
-// error_reporting(0);
+// Disabled by default, uncomment to enable errors on the page
+// error_reporting(E_ALL);
+// ini_set('display_errors', 1);
 
 // Use this variable for setting a subdirectory on a server
 // If it lives at root, leave this blank
