@@ -26,7 +26,7 @@ include ("view/header.php");
 
           <div class="row visible-xs visible-sm">    
             <div class="container">     
-              <a href="analytics/log.php"><div class="btn btn-lg btn-default btn-block">Log New Event</div></a>
+              <a href="log.php"><div class="btn btn-lg btn-default btn-block">Log New Event</div></a>
             </div>
           </div>
 
