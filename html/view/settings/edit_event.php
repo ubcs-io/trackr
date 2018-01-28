@@ -6,6 +6,10 @@ $description = $event_manager->description ?: "Give some context for what you ar
 $instruction = ($name == "Event Name") ? "Create Event" : "Update";
 $name = $event_manager->name ?: "Event Name";
 
+echo "<pre>";
+var_dump($event_manager);
+echo "</pre>";
+
 ?>
 
 <div class="col-md-8 col-md-offset-2 well">
@@ -24,6 +28,11 @@ $name = $event_manager->name ?: "Event Name";
       <select class="form-control" id="type" name="type">
         <?php $event_manager->create_type_view( ); ?>
       </select>
+    </div>
+
+    <div class="form-group">
+      <label for="delay">Days Before Reset</label>
+      <input type="text" name="delay" class="form-control" id="delay" value="<?php echo $event_manager->delay; ?>">
     </div>
 
     <div class="form-group">
