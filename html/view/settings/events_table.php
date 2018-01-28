@@ -15,8 +15,10 @@ $db->tracked_events = $db->query( $sql );
     <thead>
       <tr>
         <th>Event Name</th>
-        <th>Status</th>
+        <th>Delay</th>
+        <th>Type</th>
         <th>Date Added</th>
+        <th>Status</th>
         <th>&nbsp;</th>
       </tr>
     </thead>
@@ -33,8 +35,11 @@ $db->tracked_events = $db->query( $sql );
 
           echo '<tr>';
           echo '<td><span class="lead">' . $event['name'] . '</span></td>';
-          echo '<td><a href="' . $edit_url . '"><button class="btn btn-md btn-' . $event['status_color'] . '">' . $event['status'] . '</button></a></td>';
+
+          echo '<td>' . $event['reset'] . '</td>';
+          echo '<td>' . $event['type'] . '</td>';
           echo '<td>' . $event['date_added'] . '</td>';
+          echo '<td><a href="' . $edit_url . '"><button class="btn btn-md btn-' . $event['status_color'] . '">' . $event['status'] . '</button></a></td>';
           echo '<td><a href="' . $edit_url . '"><button class="btn btn-md btn-default btn-block">Edit</button></a></td>';
           echo '</tr>';
         }
