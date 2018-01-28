@@ -39,6 +39,7 @@ if (isset($_GET['view']) && $_GET['view'] == "true") {
 
 	$event_manager->update_event ( $event_manager->id, "name", $event_name );
 	$event_manager->update_event ( $event_manager->id, "type", strtolower($_GET['type']) );
+	$event_manager->update_event ( $event_manager->id, "reset", $_GET['delay'] );
 	$event_manager->update_event ( $event_manager->id, "description", $_GET['description'] );
 
 	// Now that a new event has been created, update the tables
