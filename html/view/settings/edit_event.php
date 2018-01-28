@@ -1,14 +1,9 @@
 <?php 
 
-
 $name = $event_manager->name ?: "Event Name";
 $description = $event_manager->description ?: "Give some context for what you are planning on tracking";
 $instruction = ($name == "Event Name") ? "Create Event" : "Update";
 $name = $event_manager->name ?: "Event Name";
-
-echo "<pre>";
-var_dump($event_manager);
-echo "</pre>";
 
 ?>
 
