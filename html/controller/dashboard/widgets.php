@@ -4,11 +4,11 @@
 $db = new db($con);
 
 // Fetch the binary tracked events
-$sql = "SELECT * FROM tracked_events WHERE type = 'binary' AND active = 1 LIMIT 4";
+$sql = "SELECT * FROM tracked_events WHERE type = 'binary' AND active = 1";
 $db->binary_widgets = $db->query( $sql );
 
 // Fetch the scalar tracked events
-$sql = "SELECT * FROM tracked_events WHERE type = 'scale' AND active = 1 LIMIT 4";
+$sql = "SELECT * FROM tracked_events WHERE type = 'scale' AND active = 1";
 $db->scalar_widgets = $db->query( $sql );
 
 echo '<div class="row">';
