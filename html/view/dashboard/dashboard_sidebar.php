@@ -7,7 +7,7 @@
 
     <ul class="nav nav-sidebar">
       <li><a href="index.php">Overview</a></li>
-      <li><a href="log.php">Log New</a></li>
+      <li><a href="log.php">Track</a></li>
       <li><a href="settings.php">Settings</a></li>
       <li class="disabled"><a href="#">Export</a></li>
     </ul>
