@@ -14,7 +14,7 @@ $scale = array_fill(1, 7, 0);
 
       <div class="col-xl-2 col-lg-4 col-md-12 col-sm-12">
         <div class="col-12 well">
-          <a href="settings.php?view=true&event=<?php echo $widget['name']; ?>" class="btn btn-default pull-right" role="button">
+          <a href="settings.php?view=true&id=<?php echo $widget['id']; ?>" class="btn btn-default pull-right" role="button">
             <span class="glyphicon glyphicon-wrench" aria-hidden="true"></span>&nbsp;&nbsp;Edit
           </a>
         <h3><?php echo $widget['name']; ?></h3>
