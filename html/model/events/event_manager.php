@@ -40,8 +40,8 @@ class event_manager extends db {
     $description = $this->con->real_escape_string($description);
 
     // Create a new event in the tracked_events table
-    $sql = "INSERT INTO  tracked_events (`date_added`, `name`, `type`, `description`, `image_url`, `active`) 
-    VALUES ( CURRENT_TIMESTAMP(), '" . $event_name . "', '" . $type . "', '" . $description . "', '" . $image_url . "', 1)";
+    $sql = "INSERT INTO  tracked_events (`date_added`, `name`, `category`, `type`, `description`, `image_url`, `active`) 
+    VALUES ( CURRENT_TIMESTAMP(), '" . $event_name . "', 'no_cat', '" . $type . "', '" . $description . "', '" . $image_url . "', 1)";
     
     $this->query( $sql );
 
