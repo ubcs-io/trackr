@@ -16,13 +16,13 @@
               <p>
                 <?php echo $widget['description']; ?><br><br></p>
               <p>
-                <a href="?log=true&complete=true&event=<?php echo $widget['name']; ?>" class="btn btn-primary" role="button">
+                <a href="?log=true&complete=true&id=<?php echo $widget['id']; ?>" class="btn btn-primary" role="button">
                   <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>&nbsp;&nbsp;Complete 
                 </a> 
-                <a href="?log=true&complete=false&event=<?php echo $widget['name']; ?>" class="btn btn-default" role="button">
+                <a href="?log=true&complete=false&id=<?php echo $widget['id']; ?>" class="btn btn-default" role="button">
                   <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
                 </a>
-                <a href="settings.php?view=true&event=<?php echo $widget['name']; ?>" class="btn btn-default pull-right" role="button">
+                <a href="settings.php?view=true&id=<?php echo $widget['id']; ?>" class="btn btn-default pull-right" role="button">
                   <span class="glyphicon glyphicon-wrench" aria-hidden="true"></span>&nbsp;&nbsp;Edit
                 </a>
               </p>
